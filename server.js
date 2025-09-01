@@ -1,13 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json()); // Replaced bodyParser with express built-in method
 
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/smart_data';
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });

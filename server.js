@@ -9,7 +9,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/du_lieu_thong_minh', { useNewUrlParser: true, useUnifiedTopology: true });
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/du_lieu_thong_minh';
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.get('/', (req, res) => {
   res.send('Chào mừng đến với Dữ Liệu Thông Minh!');

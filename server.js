@@ -13,9 +13,9 @@ const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/du_lieu_t
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.get('/', (req, res) => {
-  res.send('Chào mừng đến với Dữ Liệu Thông Minh!');
+  res.send('Welcome to Smart Data!');
 });
 
 app.listen(PORT, () => {
-  console.log(`Server đang chạy trên cổng ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
